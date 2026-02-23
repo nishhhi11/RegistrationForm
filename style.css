@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* 🌌 Animated Background (no color shift) */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0b1f3a, #142f54);
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 🧊 Glass Form */
+.form {
+    width: 360px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(0, 198, 255, 0.4);
+    box-shadow: 0 0 30px rgba(0, 198, 255, 0.2);
+    color: white;
+}
+
+/* Title */
+.form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Inputs */
+.input-box {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    outline: none;
+    color: white;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.input-box label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -12px;
+    font-size: 12px;
+    color: #00c6ff;
+}
+
+.input-box input:focus {
+    border-bottom: 2px solid #00c6ff;
+    box-shadow: 0 4px 10px rgba(0, 198, 255, 0.3);
+}
+
+/* DOB */
+.date-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-box label {
+    position: static;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.date-box input {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 0;
+}
+
+.date-box input:focus {
+    border-bottom: 2px solid #00c6ff;
+}
+
+/* Calendar icon white */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* Gender */
+.gender {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.gender p {
+    margin-bottom: 8px;
+}
+
+.gender label {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.gender input {
+    accent-color: #00c6ff;
+}
+
+/* Terms */
+.terms {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.terms input {
+    accent-color: #00c6ff;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 198, 255, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .form {
+        width: 90%;
+        padding: 30px;
+    }
+}
